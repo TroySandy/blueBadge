@@ -1,0 +1,17 @@
+input{
+    border: none;
+    border-radius: 5px;
+    background-color: lightgrey;
+    height: 40px;
+    width: 300px;
+    text-indent: 5px;
+    margin-bottom: 1em;
+    margin: 1em;
+    font-size: 18px;
+}
+
+input:focus, input:hover {
+    outline: none;
+    background-color: grey;
+    color: white;
+}
