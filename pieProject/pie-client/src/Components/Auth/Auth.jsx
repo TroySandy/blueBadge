@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Auth.css"; //css imports are the last thing imported
 
 const Auth = (props) => {
@@ -67,9 +67,9 @@ const signupFields = () => {
           }}
         />
         <br />
-        <button onClick={(e) => loginToggle(e)}>Login/SignUp</button>
+        <button onClick={(e) => loginToggle(e)} className='button'>Login/SignUp</button>
         <br />
-        <button type="submit">Submit User Data</button>
+        <button type="submit" className='button'>Submit User Data</button>
       </form>
     </div>
   );

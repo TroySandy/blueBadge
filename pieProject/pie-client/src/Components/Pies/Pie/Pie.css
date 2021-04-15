@@ -1,0 +1,13 @@
+td {
+    border: 1px solid lightseagreen;
+    background-color: lightskyblue;
+}
+
+table {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;  
+    /* makes sure there is no padding */
+}

@@ -15,3 +15,14 @@ input:focus, input:hover {
     background-color: grey;
     color: white;
 }
+
+
+.button{
+    height: 60px!important;
+    width: 150px!important;
+    margin: 10px;
+    background-color: lightskyblue;
+    border-radius: 50px 10% 3em 0;
+    
+
+}

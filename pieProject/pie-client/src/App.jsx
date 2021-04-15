@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Auth from "./Components/Auth/Auth";
+import Pies from './Components/Pies/Pies.jsx'
 import "./App.css";
 
 function App() {
-  const [sessionToken, setSessionToken] = useState("");
+  const [sessionToken, setSessionToken] = useState('');
 
-  //react uses Pascal Case, every first letter is Cap.
+  const viewConductor = () => {
+    return sessionToken !== '' ? <Pies token={sessionToken} /> : <Auth />
+  }
 
   return (
     <div className="App">
       {sessionToken}
       <Navbar />
-      <Auth />
-      <h1>Hello World</h1>
-      <p>I am learning react!!</p>
+      {viewConductor()}
     </div>
   );
 }
