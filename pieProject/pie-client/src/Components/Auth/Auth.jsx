@@ -40,9 +40,33 @@ const signupFields = () => {
     ) : null
 }
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const url = login ? "http://localhost:4000/user/login" : "http://localhost:4000/user/register"
+  const bodyObj = login ? {
+    email,
+    password,
+    } : {
+      email,
+      password,
+      firstName,
+      lastName
+    }
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(bodyObj),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.json())
+    .then(json => console.log(json))
+}
+
   return (
     <div>
-      <form>
+      <form onSubmit={e => handleSubmit(e)}>
         <h1>{title()}</h1>
         {signupFields()}
         <label htmlFor="email">Email:</label>
@@ -69,7 +93,7 @@ const signupFields = () => {
         <br />
         <button onClick={(e) => loginToggle(e)} className='button'>Login/SignUp</button>
         <br />
-        <button type="submit" className='button'>Submit User Data</button>
+        <button type="submit" onSubmit={e => handleSubmit(e)} className='button'>Submit User Data</button>
       </form>
     </div>
   );
